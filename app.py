@@ -8,9 +8,9 @@ from io import BytesIO
 
 def set_theme():
     """
-    Sets the theme color to dark mode.
+    Sets the theme color to dark mode and makes background font transparent.
     """
-    # Inject CSS for a dark color scheme
+    # Inject CSS for a dark color scheme and transparent background font
     main_bg = "#1F2227"
     main_fg = "#FFFFFF"
     secondary_bg = "#343a40"
@@ -42,6 +42,8 @@ def set_theme():
             }}
             .reportview-container .markdown-text-container {{
                 color: {main_fg};
+                text-align: center;
+                background-color: transparent;
             }}
             .element-container {{
                 color: {main_fg};
@@ -62,7 +64,6 @@ def set_theme():
         """,
         unsafe_allow_html=True,
     )
-
 # Function to resize image
 
 
@@ -89,7 +90,7 @@ def convert_audio_format(audio_bytes, new_format='mp3'):
 
 
 def main():
-    set_theme()  # Set theme to blue
+    set_theme() 
 
     st.title("Resize Image - Compress Audio")
     st.markdown("""
