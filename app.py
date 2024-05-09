@@ -8,10 +8,10 @@ from io import BytesIO
 
 def set_theme():
     """
-    Sets the theme color to dark mode and makes background font transparent.
+    Sets the theme color to dark mode and makes background transparent with centered text.
     """
-    # Inject CSS for a dark color scheme and transparent background font
-    main_bg = "#1F2227"
+    # Inject CSS for a dark color scheme and transparent background with centered text
+    main_bg = "rgba(0, 0, 0, 0)"  # Transparent background
     main_fg = "#FFFFFF"
     secondary_bg = "#343a40"
     secondary_fg = "#FFFFFF"
@@ -24,6 +24,7 @@ def set_theme():
             .reportview-container .main .block-container{{
                 color: {main_fg};
                 background-color: {main_bg};
+                text-align: center; /* Center-align text */
             }}
             .reportview-container .main {{
                 color: {main_fg};
@@ -42,8 +43,8 @@ def set_theme():
             }}
             .reportview-container .markdown-text-container {{
                 color: {main_fg};
-                text-align: center;
-                background-color: transparent;
+                background-color: {main_bg};
+                text-align: center; /* Center-align text */
             }}
             .element-container {{
                 color: {main_fg};
@@ -64,6 +65,7 @@ def set_theme():
         """,
         unsafe_allow_html=True,
     )
+
 # Function to resize image
 
 
