@@ -66,6 +66,7 @@ def set_theme():
         unsafe_allow_html=True,
     )
 
+
 # Function to resize image
 
 
