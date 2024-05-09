@@ -6,18 +6,17 @@ from io import BytesIO
 
 # Set theme to blue
 
-
 def set_theme():
     """
-    Sets the theme color to blue.
+    Sets the theme color to dark mode.
     """
-# Inject CSS for a color scheme
-    main_bg = "#f0f6ff"
-    main_fg = "#000000"
-    secondary_bg = "#a6ebff"
-    secondary_fg = "#000000"
-    accent_bg = "#7dabff"
-    accent_fg = "#000000"
+    # Inject CSS for a dark color scheme
+    main_bg = "#1F2227"
+    main_fg = "#FFFFFF"
+    secondary_bg = "#343a40"
+    secondary_fg = "#FFFFFF"
+    accent_bg = "#6c757d"
+    accent_fg = "#FFFFFF"
 
     st.markdown(
         f"""
@@ -56,8 +55,8 @@ def set_theme():
                 background-color: {secondary_bg};
             }}
             .streamlit-button:disabled {{
-                color: rgba(0,0,0,0.2);
-                background-color: rgba(0,0,0,0.1);
+                color: rgba(255,255,255,0.2);
+                background-color: rgba(255,255,255,0.1);
             }}
         </style>
         """,
