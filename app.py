@@ -5,6 +5,8 @@ import io
 from io import BytesIO
 import os
 
+
+
 def set_theme():
     """
     Sets the theme color to dark mode and makes background transparent with centered text.
@@ -16,7 +18,6 @@ def set_theme():
     accent_bg = "#6c757d"
     accent_fg = "#FFFFFF"
 
-    # Set page configuration
     st.set_page_config(
     page_title="Resize Image - Compress Audio",
     page_icon="🎵",
@@ -26,7 +27,7 @@ def set_theme():
 )
 
     st.markdown(
-        f"""
+        """
         <style>
             .reportview-container .main .block-container{{
                 color: {main_fg};
