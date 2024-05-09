@@ -80,12 +80,8 @@ def main():
 
     st.title("Resize Image - Compress Audio")
     st.markdown(
-        """
-        <div class="centered-content">
-            <p>Resize Photos and Compress Audio Easily and Quickly</p>
-            <p>Rifky Zaini Faroj</p>
-        </div>
-        """)
+        <p style="text-align: center;">"""Resize Photos and Compress Audio Easily and Quickly by Rifky Zaini Faroj"""</p>
+        )
 
     st.header("Image Processing")
     image_file = st.file_uploader("Upload Image", type=['jpg', 'png', 'jpeg'])
