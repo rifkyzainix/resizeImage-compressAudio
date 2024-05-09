@@ -3,9 +3,9 @@ from PIL import Image
 from pydub import AudioSegment
 import io
 from io import BytesIO
+import os
 
 # Set theme to blue
-
 def set_theme():
     """
     Sets the theme color to dark mode and makes background transparent with centered text.
@@ -66,40 +66,28 @@ def set_theme():
         unsafe_allow_html=True,
     )
 
-
 # Function to resize image
-
-
 def resize_image(image, width, height):
     return image.resize((width, height))
 
 # Function to compress audio
-
-
 def compress_audio(audio_bytes, bitrate='192k'):
     audio = AudioSegment.from_file(BytesIO(audio_bytes))
     compressed_audio = audio.export(format="mp3", bitrate=bitrate)
     return compressed_audio
 
-# Function to convert audio format
-
-
-def convert_audio_format(audio_bytes, new_format='mp3'):
-    audio = AudioSegment.from_file(BytesIO(audio_bytes))
-    converted_audio = audio.export(format=new_format)
-    return converted_audio
-
 # Main function
-
-
 def main():
     set_theme() 
 
-    st.title("Resize Image - Compress Audio")
-    st.markdown("""
-    Resize Photos and Compress Audio Easily and Quickly
-    """)
-    st.markdown("Rifky Zaini Faroj")
+     st.title("Resize Image - Compress Audio")
+    st.markdown(
+        """
+        <div class="centered-content">
+            <p>Resize Photos and Compress Audio Easily and Quickly</p>
+            <p>Rifky Zaini Faroj</p>
+        </div>
+        """)
 
     st.header("Image Resizer")
     image_file = st.file_uploader("Upload Image", type=['jpg', 'png', 'jpeg'])
@@ -115,8 +103,7 @@ def main():
             st.image(resized_image, caption="Resized Image",
                      use_column_width=True)
 
-# Create a button to download the resized image
-
+            # Create a button to download the resized image
             img_bytes = io.BytesIO()
             resized_image.save(img_bytes, format='PNG')
             img_bytes.seek(0)
@@ -146,25 +133,6 @@ def main():
                 mime="audio/mp3"
             )
             st.success("Audio compressed successfully!")
-
-        new_format = st.selectbox("Select New Format", ['mp3', 'wav'])
-        if st.button("Convert Audio Format"):
-            converted_audio = convert_audio_format(
-                uploaded_audio.getvalue(), new_format)
-            converted_audio_bytes = converted_audio.read()
-
-            st.audio(converted_audio_bytes,
-                     format=f'audio/{new_format}', start_time=0)
-
-            st.download_button(
-                label=f"Download Converted Audio ({new_format.upper()})",
-                data=converted_audio_bytes,
-                file_name=f"converted_audio.{new_format}",
-                mime=f"audio/{new_format}"
-            )
-            st.success(
-                f"Audio converted to {new_format.upper()} successfully!")
-
 
 if __name__ == "__main__":
     main()
