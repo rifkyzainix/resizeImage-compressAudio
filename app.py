@@ -5,12 +5,10 @@ import io
 from io import BytesIO
 import os
 
-# Set theme to blue
 def set_theme():
     """
     Sets the theme color to dark mode and makes background transparent with centered text.
     """
-    # Inject CSS for a dark color scheme and transparent background with centered text
     main_bg = "rgba(0, 0, 0, 0)"  # Transparent background
     main_fg = "#FFFFFF"
     secondary_bg = "#343a40"
@@ -103,7 +101,7 @@ def main():
             st.image(resized_image, caption="Resized Image",
                      use_column_width=True)
 
-            # Create a button to download the resized image
+# Create a button to download the resized image
             img_bytes = io.BytesIO()
             resized_image.save(img_bytes, format='PNG')
             img_bytes.seek(0)
