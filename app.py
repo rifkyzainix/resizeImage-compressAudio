@@ -98,7 +98,7 @@ def main():
         new_width = st.number_input("New Width", min_value=1)
         new_height = st.number_input("New Height", min_value=1)
 
-        if st.button("Resize Image"):
+        if st.button("Image Processing"):
             resized_image = resize_image(image, new_width, new_height)
             st.image(resized_image, caption="Resized Image",
                      use_column_width=True)
@@ -110,7 +110,7 @@ def main():
             st.download_button(label="Download Resized Image", data=img_bytes,
                                file_name="resized_image.png", mime="image/png")
 
-    st.header("Audio Processor")
+    st.header("Audio Processing")
     uploaded_audio = st.file_uploader("Upload Audio File", type=["mp3", "wav"])
     if uploaded_audio is not None:
         st.write('Uploaded Audio File:', uploaded_audio.name)
