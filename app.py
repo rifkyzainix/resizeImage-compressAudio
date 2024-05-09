@@ -18,14 +18,6 @@ def set_theme():
     accent_bg = "#6c757d"
     accent_fg = "#FFFFFF"
 
-    st.set_page_config(
-    page_title="Resize Image - Compress Audio",
-    page_icon="🎵",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    theme="light"
-)
-
     st.markdown(
         """
         <style>
