@@ -80,7 +80,7 @@ def main():
 
     st.title("Resize Image - Compress Audio")
     st.markdown(
-        """Resize Photos and Compress Audio Easily and Quickly by **Rifky Zaini Faroj**"""
+        """Resize Photos and Compress Audio Easily and Quickly by *****Rifky Zaini Faroj*****"""
         )
 
     st.header("Image Processing")
