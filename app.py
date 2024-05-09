@@ -78,7 +78,7 @@ def compress_audio(audio_bytes, bitrate='192k'):
 def main():
     set_theme() 
 
-     st.title("Resize Image - Compress Audio")
+    st.title("Resize Image - Compress Audio")
     st.markdown(
         """
         <div class="centered-content">
@@ -87,7 +87,7 @@ def main():
         </div>
         """)
 
-    st.header("Image Resizer")
+    st.header("Image Processing")
     image_file = st.file_uploader("Upload Image", type=['jpg', 'png', 'jpeg'])
     if image_file:
         image = Image.open(image_file)
@@ -96,7 +96,7 @@ def main():
         new_width = st.number_input("New Width", min_value=1)
         new_height = st.number_input("New Height", min_value=1)
 
-        if st.button("Image Processing"):
+        if st.button("Resize Image"):
             resized_image = resize_image(image, new_width, new_height)
             st.image(resized_image, caption="Resized Image",
                      use_column_width=True)
